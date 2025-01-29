@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Dynamic Matplotlib Graph</title>
     <script>
         function fetchGraph() {
@@ -26,12 +27,18 @@
 <body>
     <h1></h1>
     <form action="/plot" method="post">
-        <label for="number">Number:</label>
+        <label for="number">Number of days to train on:</label>
         <input type="text" id="number" name="number" required>
         <label for="symbol">Ticker:</label>
         <input type="text" id="ticker" name="ticker" required>
+        <label for="predictionType">Method of prediction</label>
+        <select name="predictionType" id="predictionType">
+            <option value="LinearRegression">Linear Regression</option>
+            <option value="LSTM">LSTM </option>
+        </select>
         <button onclick="fetchGraph()">Show Graph</button>
     </form>
     <br><br>
+    <img src="" id= "graph" alt="">
 </body>
 </html>
